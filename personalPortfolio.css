@@ -1,8 +1,25 @@
 body {
     margin: 5px;
-    background-color: #ffc39a;
+    background-color: #dcccac;
 }
 
-h3 {
-    color: #363732;
+#caroudiv {
+    height: 150px;
+}
+
+.h11 {
+    color: #dcccac;
+    background-color: #99ad7a;
+    height: 30px;
+    border-radius: 1rem;
+}
+
+.prim {
+    background-color: #546b41;
+    color: #dcccac;
+}
+
+.seconda {
+    background-color: #99ad7a;
+    color: #dcccac;
 }

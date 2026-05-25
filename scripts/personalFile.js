@@ -1,18 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
     const toggleBtn = document.getElementById("sidebarToggle");
-    const sidebar = document.getElementById("sidebar");
+    const sidenav = document.querySelector(".sidenav"); // Selects your sidebar container
 
-    if (toggleBtn && sidebar) {
+    if (toggleBtn && sidenav) {
         toggleBtn.addEventListener("click", function(e) {
-            // Stop click from instantly propagating 
             e.stopPropagation();
-            sidebar.classList.toggle("show-sidebar");
+            sidenav.classList.toggle("show-sidenav");
         });
 
-        // Optional: Close sidebar if user clicks anywhere outside of it
+        // Optional: Closes the sidebar when clicking anywhere on the main body content
         document.addEventListener("click", function(e) {
-            if (!sidebar.contains(e.target) && sidebar.classList.contains("show-sidebar")) {
-                sidebar.classList.remove("show-sidebar");
+            if (!sidenav.contains(e.target) && sidenav.classList.contains("show-sidenav")) {
+                sidenav.classList.remove("show-sidenav");
             }
         });
     }

@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link ref="stylesheet" type="text/css" href="./styles/personalPortfolio.css">
-    <script src="./scripts/personalFile.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/personalPortfolio.css">
+    <script src="./scripts/personalFile.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,7 +83,7 @@
         /* The sidebar menu */
         
         .sidenav {
-            height: 100%;
+            height: 100vh;
             /* Full-height: remove this if you want "auto" height */
             width: 160px;
             /* Set the width of the sidebar */
@@ -132,12 +132,15 @@
         @media screen and (max-width:991.98px) {
             .sidenav {
                 padding-top: 15px;
-                transform: translateX(-250px);
+                transform: translateX(-160px);
             }
             .sidenav a {
                 font-size: 12px;
             }
-            .main-content {
+            .sidenav.show-sidenav {
+                transform: translateX(0);
+            }
+            .main {
                 margin-left: 0;
                 /* Content takes up full width on mobile */
             }
@@ -153,8 +156,8 @@
         <i class="bi bi-list"></i> Menu
     </button>
 
-    <div class="sidenav prim" id="sidebar">
-        <nav class="navbar">
+    <div class="sidenav prim">
+        <nav class="navbar" id="sidebar">
 
             <a class="" href="#topOfPage">Summary</a>
             <a class="" href="#EducationDiv">Education</a>
@@ -341,15 +344,15 @@
             <div class="col-6 customdiv">
                 <h3 class="h3">Contact me</h3>
                 <p>Enter your details below to send me an email!</p>
-                <form>
+                <form action="https://formspree.io/f/xgoqnzjn" method="POST" name="personalContactForm">
                     <label>email:</label>
-                    <input type="email" class="form-control"><br>
+                    <input type="email" name="email" class="form-control"><br>
 
                     <label>name:</label>
-                    <input type="text" class="form-control"><br>
+                    <input type="text" name="name" class="form-control"><br>
 
                     <label>message:</label>
-                    <textarea class="form-control">
+                    <textarea name="message" class="form-control">
 
                 </textarea><br>
 
